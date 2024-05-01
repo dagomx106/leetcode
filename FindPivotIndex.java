@@ -10,7 +10,7 @@ public class FindPivotIndex {
         int sumRight = 0;
         for (int i = 0; i < values.length; i++) {
             sumLeft = sumLeft + Arrays.stream(values, 0, i).sum();
-            sumRight = Arrays.stream(values, i + 1, values.length).sum();
+            sumRight = sumRight + Arrays.stream(values, i + 1, values.length).sum();
             if(sumLeft == sumRight) return i;
             sumLeft = 0;
             sumRight = 0;
